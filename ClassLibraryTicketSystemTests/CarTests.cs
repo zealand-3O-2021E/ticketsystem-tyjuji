@@ -1,10 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ClassLibraryTicketSystem;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClassLibraryTicketSystem.Tests
 {
@@ -14,7 +9,7 @@ namespace ClassLibraryTicketSystem.Tests
         [TestMethod()]
         public void PriceTest()
         {
-            Car car = new Car();
+            Car car = new("ABCDEFG", DateTime.Now);
 
             var result = car.Price();
 
@@ -24,11 +19,24 @@ namespace ClassLibraryTicketSystem.Tests
         [TestMethod()]
         public void VehicleTypeTest()
         {
-            Car car = new Car();
+            Car car = new("ABCDEFG", DateTime.Now);
 
             var result = car.VehicleType();
 
             Assert.AreEqual("Car", result);
+        }
+
+        [TestMethod]
+        public void GoodLicensePlateTest()
+        {
+            _ = new Car("ABCDEFG", DateTime.Now);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void BadLicensePlateTest()
+        {
+            _ = new Car("ABCDEFGH", DateTime.Now);
         }
     }
 }
