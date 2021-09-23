@@ -27,28 +27,27 @@ namespace ClassLibraryTicketSystem
             }
         }
 
-
         /// <summary>
         /// Date and time of passing over the bridge.
         /// </summary>
-        protected DateTime Date { get; set; }
+        public DateTime Date { get; set; }
+
+        /// <summary>
+        /// Whether or not the vehicle has a BroBizz.
+        /// </summary>
+        protected bool BroBizz { get; set; }
 
         /// <summary>
         /// Price for passing over the bridge in this vehicle.
         /// </summary>
-        /// <returns>0</returns>
-        public virtual double Price()
-        {
-            return 0;
-        }
+        /// <returns>Price</returns>
+        public abstract double Price();
+
 
         /// <summary>
         /// Returns the type that defines the vehicle.
         /// </summary>
         /// <returns>"Vehicle"</returns>
-        public virtual string VehicleType()
-        {
-            return "Vehicle";
-        }
+        public abstract string VehicleType();
     }
 }

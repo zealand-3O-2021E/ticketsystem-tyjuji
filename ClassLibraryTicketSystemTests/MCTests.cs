@@ -9,7 +9,7 @@ namespace ClassLibraryTicketSystem.Tests
         [TestMethod()]
         public void PriceTest()
         {
-            MC mc = new MC("ABCDEFG", DateTime.Now);
+            MC mc = new("ABCDEFG", DateTime.Now, false);
 
             var result = mc.Price();
 
@@ -17,9 +17,27 @@ namespace ClassLibraryTicketSystem.Tests
         }
 
         [TestMethod()]
+        public void PriceWithBroBizzTest()
+        {
+            MC mc = new("ABCDEFG", DateTime.Now, true);
+
+            var result = mc.Price();
+
+            Assert.AreEqual(125 * 0.95, result, 0.000001);
+        }
+
+        [TestMethod()]
+        public void DateTest()
+        {
+            MC mc = new("ABCDEFG", DateTime.Now, false);
+
+            Assert.IsInstanceOfType(mc.Date, typeof(DateTime));
+        }
+
+        [TestMethod()]
         public void VehicleTypeTest()
         {
-            MC mc = new MC("ABCDEFG", DateTime.Now);
+            MC mc = new("ABCDEFG", DateTime.Now, false);
 
             var result = mc.VehicleType();
 
@@ -29,14 +47,14 @@ namespace ClassLibraryTicketSystem.Tests
         [TestMethod]
         public void GoodLicensePlateTest()
         {
-            _ = new MC("ABCDEFG", DateTime.Now);
+            _ = new MC("ABCDEFG", DateTime.Now, false);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void BadLicensePlateTest()
         {
-            _ = new MC("ABCDEFGH", DateTime.Now);
-        }
+            _ = new MC("ABCDEFGH", DateTime.Now, false);
+        } // Cannot be covered by tests, since the exception is thrown.
     }
 }

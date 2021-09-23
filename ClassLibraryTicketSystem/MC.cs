@@ -7,24 +7,29 @@ namespace ClassLibraryTicketSystem
     /// </summary>
     public class MC : Vehicle
     {
+        private const double price = 125;
+
         /// <summary>
         /// Constructor for the MC class.
         /// </summary>
         /// <param name="licensePlate">7 character string.</param>
         /// <param name="date">Date and time for passing the bridge.</param>
-        public MC(string licensePlate, DateTime date)
+        /// <param name="broBizz">Whether or not the vehicle has a BroBizz.</param>
+        public MC(string licensePlate, DateTime date, bool broBizz)
         {
             LicensePlate = licensePlate;
             Date = date;
+            BroBizz = broBizz;
         }
 
         /// <summary>
         /// Price for passing over the bridge in this vehicle.
         /// </summary>
-        /// <returns>125. Price is fixed.</returns>
+        /// <returns>Returns 125 with a 5% discount, when BroBizz is used.</returns>
         public override double Price()
         {
-            return 125;
+            if(BroBizz) return price * 0.95;
+            return price;
         }
 
         /// <summary>
