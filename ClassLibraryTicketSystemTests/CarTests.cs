@@ -59,6 +59,6 @@ namespace ClassLibraryTicketSystem.Tests
         public void BadLicensePlateTest()
         {
             _ = new Car("ABCDEFGH", DateTime.Now, false);
-        } // Cannot be covered by tests, since the exception is thrown.
+        } // End of function cannot be covered by tests, since the exception is thrown.
     }
 }
