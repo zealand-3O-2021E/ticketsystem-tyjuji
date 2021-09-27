@@ -12,5 +12,19 @@ namespace OresundBronLibrary
         public OresundCar(string licensePlate, DateTime date, bool broBizz) : base(licensePlate, date, broBizz)
         {
         }
+
+        public override double Price()
+        {
+            if (BroBizz)
+            {
+                return 161;
+            }
+            return 410;
+        }
+
+        public override string VehicleType()
+        {
+            return "Oresund car";
+        }
     }
 }
