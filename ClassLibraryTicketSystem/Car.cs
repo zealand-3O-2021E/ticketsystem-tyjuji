@@ -13,7 +13,7 @@ namespace ClassLibraryTicketSystem
         /// Constructor for the Car class.
         /// </summary>
         /// <param name="licensePlate">7 character string.</param>
-        /// <param name="date">Date and time for passing the bridge.</param>
+        /// <param name="date">Date and time for passing over the bridge.</param>
         /// <param name="broBizz">Whether or not the vehicle has a BroBizz.</param>
         public Car(string licensePlate, DateTime date, bool broBizz)
         {
