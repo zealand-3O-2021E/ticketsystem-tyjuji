@@ -11,23 +11,25 @@ namespace ClassLibraryTicketSystem
     /// </summary>
     public abstract class Vehicle
     {
-        private string licensePlate;
+        private string _licensePlate;
 
         /// <summary>
         /// A 7 character string identifying the vehicle.
         /// </summary>
         public string LicensePlate
         {
-            get { return licensePlate; }
+            get { return _licensePlate; }
             set { 
                 if(value.Length > 7){
-                    throw new ArgumentException("License plate exceeds 7 characters.", licensePlate);
+                    throw new ArgumentException("License plate exceeds 7 characters.", _licensePlate);
                 }
-                licensePlate = value;
+                _licensePlate = value;
             }
         }
 
         /// <summary>
+        ///
+        /// 
         /// Date and time of passing over the bridge.
         /// </summary>
         public DateTime Date { get; set; }
