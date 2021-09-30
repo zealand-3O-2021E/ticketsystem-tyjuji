@@ -7,7 +7,7 @@ namespace ClassLibraryTicketSystem
     /// </summary>
     public class Car : Vehicle
     {
-        private const double price = 240;
+        private const double _price = 240;
 
         /// <summary>
         /// Constructor for the Car class.
@@ -28,8 +28,8 @@ namespace ClassLibraryTicketSystem
         /// <returns>Returns 240 with a 5% discount, when BroBizz is used.</returns>
         public override double Price()
         {
-            if(BroBizz) return price * 0.95;
-            return price;
+            if(BroBizz) return _price * 0.95;
+            return _price;
         }
 
         /// <summary>

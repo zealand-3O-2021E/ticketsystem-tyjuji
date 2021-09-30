@@ -8,7 +8,7 @@ namespace StoreBaeltTicketLibrary
     /// </summary>
     public class StoreBaeltCar : Car
     {
-        private const double price = 240;
+        private const double _price = 240;
 
         /// <summary>
         /// Constructor for the StoreBaeltCar class.
@@ -32,9 +32,9 @@ namespace StoreBaeltTicketLibrary
                 {
                     // Slight code duplication, but since we're using a DLL, I consider base.Price() to be closed.
                     // Would be neater to add a parameter to the base.Price() method for conditional BroBizz handling.
-                    return price * 0.80 * 0.95; 
+                    return _price * 0.80 * 0.95; 
                 }
-                return price * 0.80;
+                return _price * 0.80;
             }
             return base.Price();
         }
